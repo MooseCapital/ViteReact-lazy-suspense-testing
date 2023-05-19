@@ -36,13 +36,13 @@ Now I need to test with some big dependencies. So I go and find react charts.
 ```
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 ```
-What a massive difference from simply importing and using a chart on Photos.jsx, and I've never visited it! 2.9MB 625ms
+There's a difference in size from simply importing and using a chart on Photos.jsx, and I've never visited it! 752KB 287ms
 
-![img](https://i.imgur.com/qQAQZYv.png)
+![img](https://i.imgur.com/HesvPYX.png)
 
 Now I check the Lighthouse stats, there's certainly room for improvement!
 
-![img](https://i.imgur.com/Z7qUO6D.png)
+![img](https://i.imgur.com/7PSC3u5.png)
 
 Now it's on to lazy and suspense. Instead of the regular import, we have lazy,
 then you can see the difference in wrapping Photos in suspense vs above.
@@ -54,8 +54,8 @@ const Photos = lazy(() => import('./components/Photos.jsx'));
     </Suspense>
 }/>
 ```
-Below is with lazy and suspense optimized, so easily with the fix above. We see
-such a huge time and bandwidth savings off that alone because Photos dependencies
+Below is with lazy and suspense optimized, done with the fix above. We see
+slight time and moderate bandwidth savings off that alone because Photos dependencies
 , are not being loaded until we get there.
 
 I like to compare this with the very first image up top, before react charts 
@@ -71,8 +71,10 @@ Now onto lighthouse for lazy and suspense optimized.
 ![img](https://i.imgur.com/YB5ZYGt.png)
 
 ### verdict
-I'm very impressed that a few lines did all of this. Our speed has improved so much, yet we haven't even learned
- server side rendering like nextjs, or a backend language. 
+I'm impressed that a few lines did this. Our speed slightly improved, but most importantly is
+the bandwidth saved on every single load, and combine that with not loading images until the user scrolls to it
+and we see those savings adding up. I haven't started to learn server side rendering or backend yet, and I can already get a fast load, but there's room for improvement.
+
  
 ![img](https://i.imgur.com/3s0Nwk8.png)
 
