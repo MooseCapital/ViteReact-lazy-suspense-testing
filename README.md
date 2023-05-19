@@ -72,7 +72,7 @@ Now onto lighthouse for lazy and suspense optimized.
 
 ### verdict
 I'm very impressed that a few lines did all of this. Our speed has improved so much, yet we haven't even learned
- server side rendering like nextjs yet, or a backend language. 
+ server side rendering like nextjs, or a backend language. 
  
 ![img](https://i.imgur.com/3s0Nwk8.png)
 
