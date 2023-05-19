@@ -3,8 +3,8 @@ import {AppContext} from "./components/AppContextProvider.jsx";
 import {Link, Route, Routes} from "react-router-dom";
 import Home from "./components/Home.jsx";
 
-const Photos = lazy(() => import('./components/Photos.jsx'));
-
+// const Photos = lazy(() => import('./components/Photos.jsx'));
+import Photos from "./components/Photos.jsx";
 function App(props) {
 
 
@@ -19,9 +19,7 @@ function App(props) {
         <Routes>
             <Route path={"/"} element={<Home/>}/>
             <Route path={"/photos"} element={
-                <Suspense fallback={<div>loading...</div>}>
-                    <Photos/>
-                </Suspense>
+                <Photos/>
             }/>
         </Routes>
     </div>
