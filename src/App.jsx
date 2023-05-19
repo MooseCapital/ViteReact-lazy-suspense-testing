@@ -1,20 +1,28 @@
-import {useState, useEffect, useRef, useContext} from 'react'
+import {useState, useEffect, useRef, useContext, lazy, Suspense} from 'react'
 import {AppContext} from "./components/AppContextProvider.jsx";
-import {Route, Routes} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 import Home from "./components/Home.jsx";
 
+const Photos = lazy(() => import('./components/Photos.jsx'));
+
 function App(props) {
-  // install react-router-dom in main.jsx with a click
-  //set light-mode or dark-mode in main.jsx
+
 
   return (
     <div className={`${props.colorMode} App`}>
 
-
+        <nav>
+            <Link to={"/"}>home</Link>
+            <Link to={"/photos"}>photos</Link>
+        </nav>
 
         <Routes>
             <Route path={"/"} element={<Home/>}/>
-
+            <Route path={"/photos"} element={
+                <Suspense fallback={<div>loading...</div>}>
+                    <Photos/>
+                </Suspense>
+            }/>
         </Routes>
     </div>
   )
