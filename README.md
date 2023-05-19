@@ -1,4 +1,4 @@
-## lazy load testing
+## lazy & Suspense testing
 ![react-badge.svg](public/images/react-badge.svg)
 ![vitejs-badge.svg](public/images/vitejs-badge.svg)
 
