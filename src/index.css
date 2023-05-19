@@ -1,4 +1,5 @@
 :root {
+
  margin: 0 auto;
 padding: 0;
 box-sizing: border-box;
@@ -10,7 +11,7 @@ height: 100%;
 }
 @font-face {
     font-family: "Rubik";
-    src: url("/public/fonts/Rubik-VariableFont_wght.ttf") format("woff2");
+    src: url("public/fonts/Rubik_var.woff") format("woff");
 }
 /*remember we set height, but if we set width, it does not take into account the scrollbar 10px, this creates horizontal scroller on the bottom
     the solution is to not set width anywhere and it defaults, or set auto only, but we should set height. if we do set width, choose 100% over 100vw

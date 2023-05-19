@@ -11,7 +11,7 @@ This was made easy with the
 As I learned about *lazy* and *suspense* it became hard to tell why I needed this at first. I use the same 
 api to get 10MB worth of images from before. Now they are not at the bottom of the page, but on a separate page route.
 
-```
+```jsx
 <Routes>
     <Route path={"/"} element={<Home/>}/>
     <Route path={"/photos"} element={<Photos/>}/>
@@ -33,7 +33,7 @@ not even visit those. So why use the bandwidth loading it when they're only on t
 remember before I was shocked it loaded so fast, well our Images will not load if we're not on that page.
 Now I need to test with some big dependencies. So I go and find react charts.
 
-```
+```npm
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 ```
 There's a difference in size from simply importing and using a chart on Photos.jsx, and I've never visited it! 752KB 287ms
@@ -46,7 +46,7 @@ Now I check the Lighthouse stats, there's certainly room for improvement!
 
 Now it's on to lazy and suspense. Instead of the regular import, we have lazy,
 then you can see the difference in wrapping Photos in suspense vs above.
-```
+```js
 const Photos = lazy(() => import('./components/Photos.jsx'));
 <Route path={"/photos"} element={
     <Suspense fallback={<div>loading...</div>}>

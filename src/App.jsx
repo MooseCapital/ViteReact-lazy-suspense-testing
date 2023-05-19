@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef, useContext, lazy, Suspense} from 'react'
 import {AppContext} from "./components/AppContextProvider.jsx";
-import {Link, Route, Routes} from "react-router-dom";
+import {Link, Navigate, Route, Routes} from "react-router-dom";
 import Home from "./components/Home.jsx";
 
 const Photos = lazy(() => import('./components/Photos.jsx'));
@@ -23,6 +23,7 @@ function App(props) {
                     <Photos/>
                 </Suspense>
             }/>
+            <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     </div>
   )
