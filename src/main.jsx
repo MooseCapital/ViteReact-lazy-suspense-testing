@@ -8,7 +8,7 @@ import {AppContextProvider} from "./components/AppContextProvider.jsx";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <AppContextProvider>
-    <Router>
+    <Router basename={"/ViteReact-lazy-suspense-testing"}>
         <App colorMode={"light-mode"} />
     </Router>
   </AppContextProvider>

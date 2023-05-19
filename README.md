@@ -28,7 +28,7 @@ to lazy load again? Remember we have not tried optimizing with lazy load yet.
 
 After learning more, this is for reducing load time of all our dependencies. So if we
 have many pages, and each of those have big packages that run. The user may 
-not even visit those. So why use the bandwidth loading it when they're only on the load page?
+not even visit those. So why use the bandwidth loading it when they're only on the home page?
 
 remember before I was shocked it loaded so fast, well our Images will not load if we're not on that page.
 Now I need to test with some big dependencies. So I go and find react charts.
